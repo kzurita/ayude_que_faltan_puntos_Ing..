@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="flex justify-center items-start">
+  <div
+    class="bg-white flex flex-col w-full rounded-lg max-w-md mt-20"
+  >
+    <form class="px-5 py-7" method="POST">
+      {% csrf_token %}
+
+      <div class="flex flex-col gap-2 mb-5">
+        <label for="id_name" class="font-semibold text-sm text-gray-500 block">
+          Nombre Evento
+        </label>
+
+        {% render_field form.name type="text" class="outline-none border rounded-lg px-3 py-2 text-sm w-full focus:ring-1 focus:ring-blue-500 focus:border-blue-500" autofocus=true %}
+      </div>
+
+
+      <div class="flex flex-col gap-2 mb-5">
+        <label for="id_description" class="font-semibold text-sm text-gray-500 block">
+          Descripcion
+        </label>
+
+        {% render_field form.description type="text" class="outline-none border rounded-lg px-3 py-2 text-sm w-full focus:ring-1 focus:ring-blue-500 focus:border-blue-500" %}
+      </div>
+
+      <div class="flex flex-col gap-2 mb-5">
+        <label for="id_location" class="font-semibold text-sm text-gray-500 block">
+          Ubicación
+        </label>
+
+        {% render_field form.location type="text" class="outline-none border rounded-lg px-3 py-2 text-sm w-full focus:ring-1 focus:ring-blue-500 focus:border-blue-500" %}
+      </div>
+
+      <div class="flex flex-col gap-2 mb-5">
+        <label for="id_date_time" class="font-semibold text-sm text-gray-500 block">
+          Fecha y hora
+        </label>
+
+        {% render_field form.date_time type="datetime-local" class="outline-none border rounded-lg px-3 py-2 text-sm w-full focus:ring-1 focus:ring-blue-500 focus:border-blue-500" %}
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="linear rounded-lg bg-blue-100 px-6 py-2 text-base font-medium text-brand-500 text-blue-500 transition duration-200 hover:bg-blue-200"
+        >
+          <span class="inline-block mr-2">Crear</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

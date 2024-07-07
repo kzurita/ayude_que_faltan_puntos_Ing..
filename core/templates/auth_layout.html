@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Manage | {% block title %} {% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-100">
+    <main
+      class="min-h-screen flex flex-col justify-center items-center lg:py-12"
+    >
+      <div class="p-4 md:p-10 md:w-full md:max-w-md">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </main>
+  </body>
+</html>

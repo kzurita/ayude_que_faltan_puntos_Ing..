@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Manage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    />
+  </head>
+  <body class="min-h-screen bg-gray-100">
+    <main class="min-h-screen px-4 md:px-0 grid md:grid-cols-[14rem_1fr] gap-5">
+      <div class="hidden md:flex flex-col w-56 bg-white rounded-r-xl overflow-hidden">
+        <div class="flex items-center justify-center py-10">
+          <h1 class="text-2xl text-blue-600 font-semibold">Dashboard</h1>
+        </div>
+
+        <ul class="flex flex-col py-4">
+          <li>
+            <a
+              href="{% url 'events:list' %}"
+              class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+            >
+              <span
+                class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"
+                ><i class="bx bx-home"></i
+              ></span>
+              <span class="text-sm font-medium">Todos los eventos</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{% url 'events:my_enrollments' %}"
+              class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+            >
+              <span
+                class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"
+                ><i class="bx bx-calendar"></i
+              ></span>
+              <span class="text-sm font-medium">Mis Eventos</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{% url 'events:enroll' %}"
+              class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+            >
+              <span
+                class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"
+                ><i class="bx bx-calendar"></i
+              ></span>
+              <span class="text-sm font-medium">Inscribirse</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{% url 'authentication:logout' %}"
+              class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800"
+            >
+              <span
+                class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"
+                ><i class="bx bx-log-out"></i
+              ></span>
+              <span class="text-sm font-medium">Cerrar sesión</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>

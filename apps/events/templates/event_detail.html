@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="flex justify-center items-start">
+  <div class="bg-white w-full flow-root border border-gray-100 py-3 shadow-sm rounded-lg max-w-lg mt-20">
+    <dl class="-my-3 divide-y divide-gray-100 text-sm">
+      <div class="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Nombre</dt>
+        <dd class="text-gray-700 sm:col-span-2">{{ event.name }}</dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Descripcion</dt>
+        <dd class="text-gray-700 sm:col-span-2">{{ event.description }}</dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Ubicación</dt>
+        <dd class="text-gray-700 sm:col-span-2">{{ event.location }}</dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Fecha y hora</dt>
+        <dd class="text-gray-700 sm:col-span-2">{{ event.date_time }}</dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Creado por</dt>
+        <dd class="text-gray-700 sm:col-span-2">{{ event.user }}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+{% endblock %}
